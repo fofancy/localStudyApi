@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/GeoDataProcesor-ejb/GeoDataProcesor-ejb.iml" filepath="$PROJECT_DIR$/GeoDataProcesor-ejb/GeoDataProcesor-ejb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OnlineGuide.iml" filepath="$PROJECT_DIR$/OnlineGuide.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OnlineGuide-ear/OnlineGuide-ear.iml" filepath="$PROJECT_DIR$/OnlineGuide-ear/OnlineGuide-ear.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OnlineGuide-war/OnlineGuide-war.iml" filepath="$PROJECT_DIR$/OnlineGuide-war/OnlineGuide-war.iml" />
+    </modules>
+  </component>
+</project>
