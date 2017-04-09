@@ -19,7 +19,7 @@ public class WikiNearestObjectsQueryFactory {
     Coords coords;
     int radius;
     
-    public WikiNearestObjectsQueryFactory() {
+    private WikiNearestObjectsQueryFactory() {
         
     }
     

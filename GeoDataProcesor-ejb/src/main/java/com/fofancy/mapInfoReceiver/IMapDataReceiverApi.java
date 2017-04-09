@@ -22,7 +22,7 @@ public interface IMapDataReceiverApi {
     void setCoords(Coords coords);
     Coords getCoords();
     
-    List<IMapObject> getMapObjects();
+    List<IMapObject> getNearestMapObjects();
     
     /* 
     * It is supposed that implementations will have default properties, but if it will be necessary

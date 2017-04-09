@@ -7,10 +7,8 @@ package com.fofancy.mapInfoReceiver.wiki;
 
 import com.fofancy.mapInfoReceiver.IMapDataReceiverProperties;
 import com.fofancy.mapInfoReceiver.MapDataReceiverPropertiesEnum;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+
+import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ArrayList;
@@ -70,7 +68,7 @@ public class WikiMapDataReceiverPropertiesImpl implements IMapDataReceiverProper
         try {
             Properties properties = new Properties();
             
-            FileInputStream propertiesStream = new FileInputStream(fileName);
+            InputStream propertiesStream = WikiMapDataReceiverPropertiesImpl.class.getClassLoader().getResourceAsStream(fileName);
             properties.load(propertiesStream);
             
             Set<String> propertyNames = properties.stringPropertyNames();

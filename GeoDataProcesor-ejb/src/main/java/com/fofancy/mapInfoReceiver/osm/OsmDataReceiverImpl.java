@@ -74,7 +74,7 @@ public class OsmDataReceiverImpl implements IMapDataReceiverApi {
     * 2) Exception
     */
     @Override
-    public ArrayList<IMapObject> getMapObjects() {
+    public ArrayList<IMapObject> getNearestMapObjects() {
         try {
             OverpassQuery query = new OverpassQuery();
             query.setNodeAround(1000, coords.getLatitude(), coords.getLongitude());

@@ -5,11 +5,13 @@
  */
 package com.fofancy.mapInfoReceiver;
 
+import java.io.Serializable;
+
 /**
  * The object oriented representation of maps' provider objects 
  * @author shaylin3
  */
-public interface IMapObject {
+public interface IMapObject extends Serializable {
     String getId();
     void setId(String id);
     

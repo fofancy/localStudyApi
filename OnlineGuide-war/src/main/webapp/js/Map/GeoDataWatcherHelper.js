@@ -32,8 +32,9 @@ angular.module('Map')
                                 contentType: 'application/json',
                                 data: JSON.stringify(GeoContextService.coords)
                             }).then(function(response){
-                                //alert("data processed");
-                                
+                                var mapObjects = response.data;
+
+                                console.log(mapObjects);
                                 
                                 function readIt(){
                                     responsiveVoice.speak('Response was received','US English Female');

@@ -6,15 +6,14 @@
 package com.fofancy.onlineguide;
 
 import com.fofancy.geoDataProcessor.Coords;
-import com.fofancy.geoDataProcessor.ProcessGeoDataEJB;
+import com.fofancy.geoDataProcessor.NearestObjectsReceiverEJB;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.BufferedReader;
-import java.io.File;
+import com.fofancy.mapInfoReceiver.IMapObject;
+
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.ejb.EJB;
-import javax.json.Json; 
-import javax.json.stream.JsonParserFactory;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,14 +30,14 @@ import javax.servlet.http.HttpServletResponse;
 public class NearestObjectsServlet extends HttpServlet {
     
     @EJB
-    ProcessGeoDataEJB mProcessGeoDataEJB;
+    NearestObjectsReceiverEJB mNearestObjectsReceiverEJB;
 
-    public ProcessGeoDataEJB getMProcessGeoDataEJB() {
-        return mProcessGeoDataEJB;
+    public NearestObjectsReceiverEJB getMProcessGeoDataEJB() {
+        return mNearestObjectsReceiverEJB;
     }
 
-    public void setMProcessGeoDataEJB(ProcessGeoDataEJB mProcessGeoDataEJB) {
-        this.mProcessGeoDataEJB = mProcessGeoDataEJB;
+    public void setMProcessGeoDataEJB(NearestObjectsReceiverEJB mNearestObjectsReceiverEJB) {
+        this.mNearestObjectsReceiverEJB = mNearestObjectsReceiverEJB;
     }
     
     /**
@@ -61,12 +60,22 @@ public class NearestObjectsServlet extends HttpServlet {
         
         ObjectMapper mapper = new ObjectMapper();
         Coords aCoords = mapper.readValue(request.getReader(), Coords.class);
-        
-        mProcessGeoDataEJB.process(aCoords);
-        
-        System.out.println("com.fofancy.onlineguide.processGeoData.processRequest()");
+
+        List<IMapObject> surroundingMapObjects = mNearestObjectsReceiverEJB.process(aCoords);
+
+        System.out.println(surroundingMapObjects.size());
         try (PrintWriter out = response.getWriter()) {
-            out.write("nm,");
+            /*StringBuilder responseString = new StringBuilder();
+            responseString.append("{\"surroundingObjects\" : [");*/
+
+            mapper.writeValue(out, surroundingMapObjects);
+
+            for (IMapObject mapObject : surroundingMapObjects) {
+               // responseString.append(mapper.writeValueAsString(mapObject) + ",");
+            }
+
+           // responseString.append("]}");
+            //out.print(responseString.toString());
         }
     }
 

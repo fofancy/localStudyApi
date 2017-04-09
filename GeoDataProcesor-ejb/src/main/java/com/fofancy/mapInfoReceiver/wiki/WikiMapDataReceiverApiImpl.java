@@ -30,9 +30,9 @@ public class WikiMapDataReceiverApiImpl implements IMapDataReceiverApi {
     }
     
     @Override
-    public List<IMapObject> getMapObjects() {
-        int radius = (int) properties.getProperty("radius");
-        
+    public List<IMapObject> getNearestMapObjects() {
+        int radius = Integer.valueOf(String.valueOf(properties.getProperty("radius")));
+
         WikiNearestObjectsQueryFactory factory = WikiNearestObjectsQueryFactory.newInstance();
         factory.setCoords(coords);
         factory.setRadius(radius);

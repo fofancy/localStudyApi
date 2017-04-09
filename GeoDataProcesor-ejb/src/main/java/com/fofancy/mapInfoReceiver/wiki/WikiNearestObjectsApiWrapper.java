@@ -42,7 +42,7 @@ class WikiNearestObjectsApiWrapper {
      */
     public static String queryWiki(Coords coords, int radius){
         String queryString = WikiMapDataQueryHelper
-                .getNearestObjectQueryString(coords.getLongitude(), coords.getLatitude(), radius);
+                .getNearestObjectQueryString(coords.getLatitude(), coords.getLongitude(), radius);
         String queryResult = new String();
         
         try(InputStream is = new URL(queryString).openStream();
