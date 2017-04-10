@@ -25,8 +25,9 @@ angular.module('Map')
                         width: $window.innerWidth + 'px',
                         height: $window.innerHeight + 'px'
                     });
-                    
-                    var mapApiImpl = MapApiFactory.createInstance(MAP_API_IMPL.value);
+                    setTimeout(function() {
+                        var mapApiImpl = MapApiFactory.createInstance(MAP_API_IMPL.value);
+                    }, 201);
                     
                 }
             };
