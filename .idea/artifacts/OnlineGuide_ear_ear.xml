@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="ear" name="OnlineGuide-ear:ear">
-    <output-path>$PROJECT_DIR$/OnlineGuide-ear/target</output-path>
-    <root id="archive" name="OnlineGuide-ear-1.0-SNAPSHOT.ear">
-      <element id="artifact" artifact-name="OnlineGuide-ear:ear exploded" />
-    </root>
-  </artifact>
-</component>

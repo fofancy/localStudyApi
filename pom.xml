@@ -7,10 +7,9 @@
   <packaging>pom</packaging>
   <name>OnlineGuide</name>
   <modules>
-    <module>OnlineGuide-ear</module>
-    <module>GeoDataProcesor-ejb</module>
-    <module>GeoDataProcesor-ejb</module>
-    <module>OnlineGuide-ear</module>
-    <module>OnlineGuide-war</module>
+    <module>onlineGuide-ear</module>
+    <module>mapInfoReceiver</module>
+    <module>onlineGuide-war</module>
+    <module>attractions</module>
   </modules>
 </project>

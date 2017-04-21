@@ -1,0 +1,8 @@
+package com.fofancy.geographicalObjects.info;
+
+/**
+ * Created by shaylin3 on 17.04.2017.
+ */
+public enum GeographicalObjectsInfoParametersEnum {
+    name
+}

@@ -6,16 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="GeoDataProcesor-ejb" />
-        <module name="OnlineGuide-ear" />
-        <module name="OnlineGuide-war" />
+        <module name="attractions" />
+        <module name="mapInfoReceiver" />
+        <module name="onlineGuide-ear" />
+        <module name="onlineGuide-war" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="GeoDataProcesor-ejb" target="1.7" />
+      <module name="attractions" target="1.7" />
+      <module name="mapInfoReceiver" target="1.7" />
       <module name="OnlineGuide" target="1.5" />
-      <module name="OnlineGuide-ear" target="1.7" />
-      <module name="OnlineGuide-war" target="1.7" />
+      <module name="onlineGuide-ear" target="1.7" />
+      <module name="onlineGuide-war" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
