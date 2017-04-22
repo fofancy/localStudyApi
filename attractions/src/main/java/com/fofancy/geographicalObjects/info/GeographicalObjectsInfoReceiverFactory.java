@@ -7,11 +7,12 @@ import java.util.logging.Logger;
 
 /**
  * Created by shaylin3 on 15.04.2017.
+ * Factory designed for creating new instances of GeographicalObjectsInfoReceiver
  */
-public class GeographicalObjectsInfoFactory {
+public class GeographicalObjectsInfoReceiverFactory {
     String provider;
 
-    protected GeographicalObjectsInfoFactory() {
+    protected GeographicalObjectsInfoReceiverFactory() {
     }
 
     public String getProvider() {
@@ -22,11 +23,15 @@ public class GeographicalObjectsInfoFactory {
         this.provider = provider;
     }
 
-    public static GeographicalObjectsInfoFactory newInstance() {
-        return new GeographicalObjectsInfoFactory();
+    public static GeographicalObjectsInfoReceiverFactory newInstance() {
+        return new GeographicalObjectsInfoReceiverFactory();
     }
 
-    public IGeographicalObjectsInfoReceiver createSightDescriptionReceiver() {
+    /* Creates a new instance of  createGeographicalObjectsInfoReceiver
+    *  It is consdered that property "provider" would be set before calling this method
+    *
+    * */
+    public IGeographicalObjectsInfoReceiver createGeographicalObjectsInfoReceiver() {
         IGeographicalObjectsInfoReceiver receiver = null;
 
         Class<?> clazz = null;
@@ -38,13 +43,13 @@ public class GeographicalObjectsInfoFactory {
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         }catch (ClassNotFoundException e) {
-            Logger.getLogger(GeographicalObjectsInfoFactory.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(GeographicalObjectsInfoReceiverFactory.class.getName()).log(Level.SEVERE, null, e);
         } catch (IllegalAccessException e) {
-            Logger.getLogger(GeographicalObjectsInfoFactory.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(GeographicalObjectsInfoReceiverFactory.class.getName()).log(Level.SEVERE, null, e);
         } catch (InstantiationException e) {
-            Logger.getLogger(GeographicalObjectsInfoFactory.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(GeographicalObjectsInfoReceiverFactory.class.getName()).log(Level.SEVERE, null, e);
         } catch (InvocationTargetException e) {
-            Logger.getLogger(GeographicalObjectsInfoFactory.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(GeographicalObjectsInfoReceiverFactory.class.getName()).log(Level.SEVERE, null, e);
         }
 
         return receiver;

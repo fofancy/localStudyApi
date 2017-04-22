@@ -1,6 +1,6 @@
 package com.fofancy.geographicalObjects.processor;
 
-import com.fofancy.geographicalObjects.info.GeographicalObjectsInfoFactory;
+import com.fofancy.geographicalObjects.info.GeographicalObjectsInfoReceiverFactory;
 import com.fofancy.geographicalObjects.info.GeographicalObjectsInfoParameters;
 import com.fofancy.geographicalObjects.info.IGeographicalObjectInfo;
 import com.fofancy.geographicalObjects.info.IGeographicalObjectsInfoReceiver;
@@ -16,11 +16,11 @@ public class GeographicalObjectsInfoEJB {
     }
 
     public IGeographicalObjectInfo getGeographicalObjectInfo(GeographicalObjectsInfoParameters params, String provider) {
-        GeographicalObjectsInfoFactory factory = GeographicalObjectsInfoFactory.newInstance();
+        GeographicalObjectsInfoReceiverFactory factory = GeographicalObjectsInfoReceiverFactory.newInstance();
 
         factory.setProvider(provider);
 
-        IGeographicalObjectsInfoReceiver receiver = factory.createSightDescriptionReceiver();
+        IGeographicalObjectsInfoReceiver receiver = factory.createGeographicalObjectsInfoReceiver();
 
         return receiver.receiveDescription(params);
     }

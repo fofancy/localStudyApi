@@ -5,6 +5,8 @@ import com.fofancy.geographicalObjects.info.IGeographicalObjectInfo;
 
 /**
  * Created by shaylin3 on 17.04.2017.
+ *
+ * Class created for quering wiki for geographical object info receiving
  */
 class WikiGeographicalObjectsInfoQuery {
     GeographicalObjectsInfoParameters properties;

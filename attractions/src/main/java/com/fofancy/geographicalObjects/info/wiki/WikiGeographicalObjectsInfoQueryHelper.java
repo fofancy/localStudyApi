@@ -8,11 +8,13 @@ import java.util.logging.Logger;
 
 /**
  * Created by shaylin3 on 19.04.2017.
+ * Class designed for some roughing logic performing
  */
 class WikiGeographicalObjectsInfoQueryHelper {
     private static String apiRoot;
     private static Properties apiQueriesResource = new Properties();
 
+    /* Configuration files */
     private static final String API_ROOT_RESOURCE_FILE_NAME = "geographicalObjects/wiki/wikiApiRoot.properties";
     private static final String API_QUERIES_RESOURCE_FILE_NAME = "geographicalObjects/wiki/wikiApiQueries.properties";
 

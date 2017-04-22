@@ -9,8 +9,15 @@ import java.util.logging.Logger;
 
 /**
  * Created by shaylin3 on 17.04.2017.
+ *
+ * Parameters for query. It is considered that params will be put as a parameter of main method
+ * in GeographicalobjectsInfoReceiver.receive(...);
  */
 public class GeographicalObjectsInfoParameters {
+    /* The main reason why String was used instead of GeographicalObjectsInfoParametersEnum
+    * was simplifing data structures in order to provide simplified serialization and
+    * sending parameters using data exchanging protocols
+    * */
     Map<String, Object> properties;
 
     // Contains all possible properties for Wiki map data receiver

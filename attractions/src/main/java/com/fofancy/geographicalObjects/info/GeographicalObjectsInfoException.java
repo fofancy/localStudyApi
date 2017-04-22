@@ -7,7 +7,6 @@ public class GeographicalObjectsInfoException extends RuntimeException {
 
     /**
      * Creates a new instance of
-     * <code>NearestObjectsReceiverException</code>
      * without detail message.
      */
     public GeographicalObjectsInfoException() {
@@ -15,7 +14,6 @@ public class GeographicalObjectsInfoException extends RuntimeException {
 
     /**
      * Constructs an instance of
-     * <code>NearestObjectsReceiverException</code>
      * with the specified detail
      * message.
      *

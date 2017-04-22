@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 
 /**
  * Created by shaylin3 on 21.04.2017.
+ * Class for performing the logic regarding quering and parsing wiki
  */
 class WikiGeographicalObjectsInfoApiWrapper {
     public WikiGeographicalObjectsInfoApiWrapper() {
