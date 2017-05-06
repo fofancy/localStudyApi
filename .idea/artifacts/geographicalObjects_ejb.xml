@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="ejb-jar" name="geographicalObjects:ejb">
+    <output-path>$PROJECT_DIR$/geographicalObjects/target</output-path>
+    <root id="archive" name="geographicalObjects-1.0-SNAPSHOT.jar">
+      <element id="artifact" artifact-name="geographicalObjects:ejb exploded" />
+    </root>
+  </artifact>
+</component>

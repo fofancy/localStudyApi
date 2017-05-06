@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/OnlineGuide.iml" filepath="$PROJECT_DIR$/OnlineGuide.iml" />
-      <module fileurl="file://$PROJECT_DIR$/attractions.iml" filepath="$PROJECT_DIR$/attractions.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mapInfoReceiver.iml" filepath="$PROJECT_DIR$/mapInfoReceiver.iml" />
-      <module fileurl="file://$PROJECT_DIR$/onlineGuide-ear.iml" filepath="$PROJECT_DIR$/onlineGuide-ear.iml" />
-      <module fileurl="file://$PROJECT_DIR$/onlineGuide-war.iml" filepath="$PROJECT_DIR$/onlineGuide-war.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apiConfiguration/apiConfiguration.iml" filepath="$PROJECT_DIR$/apiConfiguration/apiConfiguration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/geographicalObjects/geographicalObjects.iml" filepath="$PROJECT_DIR$/geographicalObjects/geographicalObjects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/geographicalObjectsServices/geographicalObjectsServices.iml" filepath="$PROJECT_DIR$/geographicalObjectsServices/geographicalObjectsServices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/localStudyApi.iml" filepath="$PROJECT_DIR$/localStudyApi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mapInfoReceiver/mapInfoReceiver.iml" filepath="$PROJECT_DIR$/mapInfoReceiver/mapInfoReceiver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mapInfoReceiverServices/mapInfoReceiverServices.iml" filepath="$PROJECT_DIR$/mapInfoReceiverServices/mapInfoReceiverServices.iml" />
     </modules>
   </component>
 </project>

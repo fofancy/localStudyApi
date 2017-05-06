@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://fofancy.com/schema/providers-config"
+           xmlns="http://fofancy.com/schema/providers-config"
+           elementFormDefault="qualified">
+
+
+        <xs:complexType name="info-type">
+            <xs:sequence>
+                <xs:element name="wsdl-url" type="xs:string"/>
+                <xs:element name="namespace" type="xs:string"/>
+                <xs:element name="port-name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:complexType name="service-implementation-info-type">
+            <xs:sequence>
+                <xs:element name="service-name" type="xs:string"/>
+                <xs:element name="info" type="info-type"/>
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:complexType name="services-implementations-type">
+            <xs:sequence>
+                <xs:element name="service-implementation-info" type="service-implementation-info-type" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:complexType name="provider-type">
+            <xs:sequence>
+                <xs:element name="provider-name" type="xs:string"/>
+                <xs:element name="services-implementations" type="services-implementations-type"/>
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:complexType name="providers-type">
+            <xs:sequence>
+                <xs:element name="provider" type="provider-type" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:element name="providers" type="providers-type"/>
+</xs:schema>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="ejb" url="file://$PROJECT_DIR$/attractions" />
+    <file type="ejb" url="file://$PROJECT_DIR$/geographicalObjects" />
     <file type="ejb" url="file://$PROJECT_DIR$/mapInfoReceiver" />
-    <file type="javaeeApplication" url="file://$PROJECT_DIR$/onlineGuide-ear" />
-    <file type="web" url="file://$PROJECT_DIR$/onlineGuide-war" />
+    <file type="web" url="file://$PROJECT_DIR$/geographicalObjectsServices" />
+    <file type="web" url="file://$PROJECT_DIR$/mapInfoReceiverServices" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">

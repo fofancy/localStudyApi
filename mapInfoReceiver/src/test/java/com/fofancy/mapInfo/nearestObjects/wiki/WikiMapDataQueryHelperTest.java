@@ -49,14 +49,14 @@ public class WikiMapDataQueryHelperTest {
          assertNotEquals(wikiQueryResponse, "");
      }
      
-     @Test
-     public void jacksonParsingTest() throws IOException {
-        Coords coords = new Coords(46.487121, 30.731056);
-         
-        String wikiQueryResponse = com.fofancy.mapInfo.nearestObjects.wiki.WikiNearestObjectsApiWrapper.queryWiki(coords, 1000);
-        
-        List<IMapObject> mapObjects = WikiNearestObjectsResponseProcessor.process(wikiQueryResponse);
-        
-         assertTrue(mapObjects.size() > 0);
-     }
+//     @Test
+//     public void jacksonParsingTest() throws IOException {
+//        Coords coords = new Coords(46.487121, 30.731056);
+//         
+//        String wikiQueryResponse = com.fofancy.mapInfo.nearestObjects.wiki.WikiNearestObjectsApiWrapper.queryWiki(coords, 1000);
+//        
+//        List<IMapObject> mapObjects = WikiNearestObjectsResponseProcessor.process(wikiQueryResponse);
+//        
+//         assertTrue(mapObjects.size() > 0);
+//     }
 }

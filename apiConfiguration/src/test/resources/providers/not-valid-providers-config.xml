@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<providers xmlns="http://fofancy.com/schema/providers-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://fofancy.com/schema/providers-config providers-config-schema.xsd">
+    <provider>
+        <provider-name>Wiki</provider-name>
+        <services>
+            <service>
+                <service-name>GeographicalObjectsInfoReceiver</service-name>
+                <info>
+                    <wsdl-url>http://localhost:10100/geographical-objects-info-receiver?wsdl</wsdl-url>
+                    <namespace>http://fofancy.com/</namespace>
+                    <port-name>GeographicalObjectsInfoReceiverPort</port-name>
+                </info>
+            </service>
+            <service>
+                <service-name>MapInfoReceiver</service-name>
+                <info>
+                    <wsdl-url>http://localhost:10100/map-info-receiver?wsdl</wsdl-url>
+                    <namespace>http://fofancy.com/</namespace>
+                </info>
+            </service>
+        </services>
+    </provider>
+</providers>
