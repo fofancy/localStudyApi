@@ -9,6 +9,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,6 +18,8 @@ import java.util.List;
 @Path("/nearest-objects")
 @Produces({ MediaType.APPLICATION_JSON })
 public class NearestObjectsRestService {
+    private static final String DEFAULT_RADIUS = "3000";
+
     @EJB
     NearestObjectsReceiverEJB mNearestObjectsReceiverEJB;
 
@@ -37,7 +40,14 @@ public class NearestObjectsRestService {
         aCoords.setLatitude(Double.valueOf(latitude));
         aCoords.setLongitude(Double.valueOf(longitude));
 
-        List<IMapObject> surroundingMapObjects = mNearestObjectsReceiverEJB.process(aCoords);
+        NearestObjectsReceiverParametersImpl params = new NearestObjectsReceiverParametersImpl();
+        params.setProperty("latitude", latitude);
+        params.setProperty("longitude", longitude);
+        params.setProperty("radius", DEFAULT_RADIUS);
+
+        String provider = "Wiki";
+
+        ArrayList<MapObjectImpl> surroundingMapObjects = mNearestObjectsReceiverEJB.getNearestObjects(params, provider);
 
         return Response
                 .ok(surroundingMapObjects)

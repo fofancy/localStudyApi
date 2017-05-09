@@ -26,7 +26,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="apiConfiguration" target="1.5" />
+      <module name="apiConfiguration" target="1.7" />
       <module name="geographicalObjects" target="1.7" />
       <module name="geographicalObjectsServices" target="1.7" />
       <module name="localStudyApi" target="1.5" />

@@ -5,15 +5,10 @@
  */
 package com.fofancy.mapInfo.nearestObjects.processor;
 
-import com.fofancy.mapInfo.nearestObjects.Coords;
-import com.fofancy.mapInfo.nearestObjects.INearestObjectsReceiver;
-import com.fofancy.mapInfo.nearestObjects.IMapObject;
-import com.fofancy.mapInfo.nearestObjects.NearestObjectsReceiverFactory;
-import com.fofancy.mapInfo.nearestObjects.wiki.WikiNearestObjectsReceiverPropertiesImpl;
+import com.fofancy.mapInfo.nearestObjects.*;
+//import com.fofancy.mapInfo.nearestObjects.wiki.WikiNearestObjectsReceiverPropertiesImpl;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
@@ -29,11 +24,12 @@ import javax.interceptor.Interceptors;
  */
 @Stateless
 public class NearestObjectsReceiverEJB {
-
-    INearestObjectsReceiver mapDataReceiverApi;
-
     @Inject
     private Logger mLogger;
+
+    @Inject
+    @NearestObjectsReceiverQualifier
+    private NearestObjectsReceiverFactory factory;
 
     /*
      * TODO: Add control of mapDataReceiver provider
@@ -41,30 +37,26 @@ public class NearestObjectsReceiverEJB {
      */
     @PostConstruct
     public void init() {
-        NearestObjectsReceiverFactory factory = NearestObjectsReceiverFactory.newInstance();
-        factory.setProvider("com.fofancy.mapInfo.nearestObjects.wiki.WikiNearestObjectsReceiverImpl");
-        mapDataReceiverApi = factory.createNearestObjectsReceiver();
-
-        WikiNearestObjectsReceiverPropertiesImpl properties = new WikiNearestObjectsReceiverPropertiesImpl();
-        properties.readProperties("MapInfoReceiving/nearestObjectProperties.properties");
-
-        mapDataReceiverApi.setMapDataReceiverProperties(properties);
+//        NearestObjectsReceiverFactory factory = NearestObjectsReceiverFactory.newInstance();
+//        factory.setProvider("com.fofancy.mapInfo.nearestObjects.wiki.WikiNearestObjectsReceiverImpl");
+//        mapDataReceiverApi = factory.createNearestObjectsReceiver();
+//
+//        WikiNearestObjectsReceiverPropertiesImpl properties = new WikiNearestObjectsReceiverPropertiesImpl();
+//        properties.readProperties("MapInfoReceiving/nearestObjectProperties.properties");
+//
+//        mapDataReceiverApi.setMapDataReceiverProperties(properties);
     }
     
     public NearestObjectsReceiverEJB(){ }
     
     @Interceptors(GeoDataLoggingInterceptor.class)
-    public List<IMapObject> process(Coords coords){
-        List<IMapObject> mapObjects = new ArrayList<>();
+    public ArrayList<MapObjectImpl> getNearestObjects(NearestObjectsReceiverParametersImpl parameters, String provider){
+        factory.setProvider(provider);
 
-        try{
-              mapDataReceiverApi.setCoords(coords);
+        INearestObjectsReceiver receiver = factory.createNearestObjectsReceiver();
 
-              mapObjects = mapDataReceiverApi.getNearestMapObjects();
-        } catch (Exception ex) {
-            mLogger.log(Level.SEVERE, null, ex);
-        }
-
-        return mapObjects;
+        // TODO: DEBUG - remove
+        System.out.println(parameters.getProperty("latitude"));
+        return receiver.receiveNearestMapObjects(parameters);
     }
 }

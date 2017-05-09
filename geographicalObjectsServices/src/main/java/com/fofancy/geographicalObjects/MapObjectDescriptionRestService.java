@@ -38,7 +38,7 @@ public class MapObjectDescriptionRestService {
         IGeographicalObjectInfo providerResponse = geographicalObjectsInfo
                 .getGeographicalObjectInfo(
                         params,
-                        "com.fofancy.geographicalObjects.info.wiki.WikiGeographicalObjectsInfoReceiver"
+                        "Wiki"
                 );
 
         return  Response

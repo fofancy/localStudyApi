@@ -49,6 +49,9 @@ public class ProvidersXmlConfigSaxHandler extends DefaultHandler {
         else if(qName.equals("services")){
             currentServicesImplementations = new HashMap<String, ServiceImplementationInfo>();
         }
+        else if(qName.equals("service-implementation-info")){
+            currentImplementationInfo = new ServiceImplementationInfo();
+        }
         else if(qName.equals("provider")) {
             currentProvider = new Provider();
         }
@@ -115,10 +118,10 @@ public class ProvidersXmlConfigSaxHandler extends DefaultHandler {
     }
 
     private void buildServiceImplementation() {
-        URL autoWsdl = null;
+        URL wsdl = null;
 
         try {
-            autoWsdl = new URL("http://localhost:1000/Auto-web?wsdl");
+            wsdl = new URL(serviceHelper.getWsdlUrl());
         } catch (MalformedURLException e) {
             throw new ProvidersXmlConfigParsingException(e.getMessage());
         }
@@ -131,7 +134,7 @@ public class ProvidersXmlConfigSaxHandler extends DefaultHandler {
         QName qName = new QName(namespace, serviceName);
         QName qPort = new QName(namespace, portName );
 
-        Service service = Service.create(autoWsdl, qName);
+        Service service = Service.create(wsdl, qName);
 
         currentImplementationInfo.setService(service);
         currentImplementationInfo.setPortName(qPort);

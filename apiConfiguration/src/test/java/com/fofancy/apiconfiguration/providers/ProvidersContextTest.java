@@ -51,13 +51,13 @@ public class ProvidersContextTest {
 //        }
     }
 
-//    @Test
-//    public void providersContextTest() {
-//        ProvidersContext providersContext = new ProvidersContext();
-//
-//        providersContext.parseProvidersXmlConfig();
-//        Provider wikiProvider = providersContext.getProviderByName("Wiki");
-//
-//        assertNotNull(wikiProvider);
-//    }
+    @Test
+    public void providersContextTest() {
+        ProvidersContext providersContext = new ProvidersContext();
+
+        providersContext.parseProvidersXmlConfig();
+        Provider wikiProvider = providersContext.getProviderByName("Wiki");
+
+        assertNotNull(wikiProvider);
+    }
 }

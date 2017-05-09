@@ -6,12 +6,11 @@
 package com.fofancy.mapInfo.nearestObjects;
 
 /**
- *
- * @author shaylin3
+ * Properties for DataReceiver
+ * 
  */
-public interface INearestObjectsReceiverProperties {
-    Object getProperty(String propertyName);
-    void setProperty(String propertyName, Object property);
-    
-    boolean containsProperty(String propertyName);
+public enum NearestObjectsReceiverParametersEnum {
+    RADIUS,
+    LATITUDE,
+    LONGITUDE
 }

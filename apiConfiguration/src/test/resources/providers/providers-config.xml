@@ -6,19 +6,19 @@
 
         <services-implementations>
             <service-implementation-info>
-                <service-name>GeographicalObjectsInfoReceiver</service-name>
+                <service-name>geographical-objects-info</service-name>
                 <info>
-                    <wsdl-url>http://localhost:10100/geographical-objects-info-receiver?wsdl</wsdl-url>
-                    <namespace>http://fofancy.com/</namespace>
-                    <port-name>GeographicalObjectsInfoReceiverPort</port-name>
+                    <wsdl-url>http://localhost:8180/wikiGeographicalObjects-1.0-SNAPSHOT/geographical-objects-info?wsdl</wsdl-url>
+                    <namespace>http://wiki.fofancy.com/</namespace>
+                    <port-name>WikiGeographicalObjectsInfoReceiverServiceEndpointPort</port-name>
                 </info>
             </service-implementation-info>
             <service-implementation-info>
-                <service-name>MapInfoReceiver</service-name>
+                <service-name>nearest-objects</service-name>
                 <info>
-                    <wsdl-url>http://localhost:10100/map-info-receiver?wsdl</wsdl-url>
-                    <namespace>http://fofancy.com/</namespace>
-                    <port-name>MapInfoReceiverPort</port-name>
+                    <wsdl-url>http://localhost:8180/wikiMapInfoReceiver-1.0-SNAPSHOT/nearest-objects?wsdl</wsdl-url>
+                    <namespace>http://wiki.fofancy.com/</namespace>
+                    <port-name>WikiNearestObjectsReceiverServiceEndpointPort</port-name>
                 </info>
             </service-implementation-info>
         </services-implementations>

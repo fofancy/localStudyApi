@@ -5,14 +5,34 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.fofancy.apiconfiguration.providers.Provider;
+import com.fofancy.apiconfiguration.providers.ProvidersContext;
+import com.fofancy.apiconfiguration.providers.ServiceImplementationInfo;
+
+import javax.ejb.EJB;
+import javax.ejb.Singleton;
+import javax.inject.Inject;
+import javax.xml.ws.Service;
+
 /**
  * Created by shaylin3 on 15.04.2017.
  * Factory designed for creating new instances of GeographicalObjectsInfoReceiver
  */
 public class GeographicalObjectsInfoReceiverFactory {
-    String provider;
+    private static final String SERVICE_NAME = "geographical-objects-info";
+
+    private ProvidersContext context;
+    private String provider;
 
     protected GeographicalObjectsInfoReceiverFactory() {
+    }
+
+    public ProvidersContext getContext() {
+        return context;
+    }
+
+    public void setContext(ProvidersContext context) {
+        this.context = context;
     }
 
     public String getProvider() {
@@ -34,23 +54,15 @@ public class GeographicalObjectsInfoReceiverFactory {
     public IGeographicalObjectsInfoReceiver createGeographicalObjectsInfoReceiver() {
         IGeographicalObjectsInfoReceiver receiver = null;
 
-        Class<?> clazz = null;
-        try {
-            clazz = Class.forName(provider);
-            Constructor<?> ctor = null;
-            ctor = clazz.getConstructor();
-            receiver = (IGeographicalObjectsInfoReceiver) ctor.newInstance();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        }catch (ClassNotFoundException e) {
-            Logger.getLogger(GeographicalObjectsInfoReceiverFactory.class.getName()).log(Level.SEVERE, null, e);
-        } catch (IllegalAccessException e) {
-            Logger.getLogger(GeographicalObjectsInfoReceiverFactory.class.getName()).log(Level.SEVERE, null, e);
-        } catch (InstantiationException e) {
-            Logger.getLogger(GeographicalObjectsInfoReceiverFactory.class.getName()).log(Level.SEVERE, null, e);
-        } catch (InvocationTargetException e) {
-            Logger.getLogger(GeographicalObjectsInfoReceiverFactory.class.getName()).log(Level.SEVERE, null, e);
-        }
+        // DEBUG
+        System.out.println(provider);
+        System.out.println("Context" + context.toString());
+        Provider contextProvider = context.getProviderByName(provider);
+        ServiceImplementationInfo serviceImplInfo = contextProvider.getServiceImplementationInfo(SERVICE_NAME);
+
+        System.out.println(serviceImplInfo.getPortName());
+        Service service = serviceImplInfo.getService();
+        receiver = service.getPort(serviceImplInfo.getPortName(), IGeographicalObjectsInfoReceiver.class);
 
         return receiver;
     }

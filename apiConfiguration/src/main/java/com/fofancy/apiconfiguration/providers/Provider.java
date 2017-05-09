@@ -16,4 +16,8 @@ public class Provider {
     public void setServicesImplementations(HashMap<String, ServiceImplementationInfo> servicesImplementations) {
         this.servicesImplementations = servicesImplementations;
     }
+
+    public ServiceImplementationInfo getServiceImplementationInfo(String serviceName) {
+        return servicesImplementations.get(serviceName);
+    }
 }

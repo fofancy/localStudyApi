@@ -23,16 +23,16 @@ public class GeoDataLoggingInterceptor {
     
     @AroundInvoke
     public Object logGeoData(InvocationContext ic) throws Exception{
-        int FIRST_PARAMETR = 0;
-        Coords aCoords = (Coords) ic.getParameters()[FIRST_PARAMETR];
-        
-        String aLogMessage = String.format(
-                "Longitude : %1f;\n Latitude: %2f;", 
-                aCoords.getLongitude(), 
-                aCoords.getLatitude()
-        );
-        
-        logger.log(Level.INFO, aLogMessage);
+//        int FIRST_PARAMETR = 0;
+//        Coords aCoords = (Coords) ic.getParameters()[FIRST_PARAMETR];
+//
+//        String aLogMessage = String.format(
+//                "Longitude : %1f;\n Latitude: %2f;",
+//                aCoords.getLongitude(),
+//                aCoords.getLatitude()
+//        );
+//
+        logger.log(Level.INFO, "nearest-objects");
         
         return ic.proceed();
     }

@@ -1,4 +1,4 @@
-package com.fofancy.geographicalObjects.info;
+package com.fofancy.mapInfo.nearestObjects;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -12,51 +12,49 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Created by shaylin3 on 17.04.2017.
+ * TODO: rename poperty properties to params
  *
- * Parameters for query. It is considered that params will be put as a parameter of main method
- * in GeographicalobjectsInfoReceiver.receive(...);
+ * Created by shaylin3 on 08.05.2017.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement
-public class GeographicalObjectsInfoParameters implements Serializable {
-    /* The main reason why String was used instead of GeographicalObjectsInfoParametersEnum
-    * was simplifing data structures in order to provide simplified serialization and
-    * sending parameters using data exchanging protocols
-    * */
+public class NearestObjectsReceiverParametersImpl implements INearestObjectsReceiverParameters, Serializable {
     HashMap<String, Object> properties;
 
     // Contains all possible properties for Wiki map data receiver
     HashSet<String> allPossibleProperties;
 
-    public GeographicalObjectsInfoParameters() {
+    public NearestObjectsReceiverParametersImpl() {
         properties = new HashMap<>();
 
         initAllPossibleProperties();
     }
 
+    @Override
     public Object getProperty(String propertyName) {
         if(properties.containsKey(propertyName)){
             return properties.get(propertyName);
         }
         else
-            throw new IllegalPropertyNameException();
+            throw new IllegalNearestObjectsPropertyName();
     }
 
+    @Override
     public void setProperty(String propertyName, Object property) {
         if(this.allPossibleProperties.contains(propertyName)){
             this.properties.put(propertyName, property);
         }
         else
-            throw new IllegalPropertyNameException();
+            throw new IllegalNearestObjectsPropertyName();
     }
 
+    @Override
     public boolean containsProperty(String propertyName) {
         if(this.allPossibleProperties.contains(propertyName)){
             return this.properties.containsKey(propertyName);
         }
         else
-            throw new IllegalPropertyNameException();
+            throw new IllegalNearestObjectsPropertyName();
     }
 
 
@@ -65,7 +63,7 @@ public class GeographicalObjectsInfoParameters implements Serializable {
         try {
             Properties properties = new Properties();
 
-            InputStream propertiesStream = GeographicalObjectsInfoParameters.class.getClassLoader().getResourceAsStream(fileName);
+            InputStream propertiesStream = NearestObjectsReceiverParametersImpl.class.getClassLoader().getResourceAsStream(fileName);
             properties.load(propertiesStream);
 
             Set<String> propertyNames = properties.stringPropertyNames();
@@ -74,11 +72,11 @@ public class GeographicalObjectsInfoParameters implements Serializable {
                 setProperty(propertyName, properties.getProperty(propertyName));
             }
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(GeographicalObjectsInfoParameters.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(NearestObjectsReceiverParametersImpl.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(GeographicalObjectsInfoParameters.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (GeographicalObjectsInfoException ex) {
-            Logger.getLogger(GeographicalObjectsInfoParameters.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(NearestObjectsReceiverParametersImpl.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NearestObjectsReceiverException ex) {
+            Logger.getLogger(NearestObjectsReceiverParametersImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -86,12 +84,8 @@ public class GeographicalObjectsInfoParameters implements Serializable {
     private void initAllPossibleProperties(){
         this.allPossibleProperties = new HashSet<>();
 
-        GeographicalObjectsInfoParametersEnum[] propertiesEnums = GeographicalObjectsInfoParametersEnum.values();
-        for(int i = 0; i < propertiesEnums.length; i++)
-            allPossibleProperties.add(propertiesEnums[i].name().toLowerCase());
-
-//        NearestObjectsReceiverPropertiesEnum[] generalProperties = NearestObjectsReceiverPropertiesEnum.values();
-//        for(int i = 0; i < generalProperties.length; i++)
-//            allPossibleProperties.add(generalProperties[i].name().toLowerCase());
+        NearestObjectsReceiverParametersEnum[] generalProperties = NearestObjectsReceiverParametersEnum.values();
+        for(int i = 0; i < generalProperties.length; i++)
+            allPossibleProperties.add(generalProperties[i].name().toLowerCase());
     }
 }
