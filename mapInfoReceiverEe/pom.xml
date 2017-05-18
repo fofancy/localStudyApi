@@ -27,7 +27,7 @@
         </dependency>
         <dependency>
             <groupId>com.fofancy</groupId>
-            <artifactId>mapInfoReceiver</artifactId>
+            <artifactId>map-info-receiver</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>

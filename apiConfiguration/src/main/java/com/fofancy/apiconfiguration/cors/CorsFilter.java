@@ -15,6 +15,8 @@ public class CorsFilter implements ContainerResponseFilter {
         responseContext.getHeaders().add("Access-Control-Allow-Headers", "origin");
         responseContext.getHeaders().add("Access-Control-Allow-Credentials", "true");
         responseContext.getHeaders().add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
+        responseContext.getHeaders().add("Access-Control-Allow-Headers",
+                "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With, Provider-Name");
         responseContext.getHeaders().add("Access-Control-Max-Age", "1209600");
     }
 }

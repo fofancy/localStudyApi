@@ -3,10 +3,7 @@ package com.fofancy.mapInfo.nearestObjects;
 import com.fofancy.mapInfo.nearestObjects.processor.NearestObjectsReceiverEJB;
 
 import javax.ejb.EJB;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
@@ -18,8 +15,8 @@ import java.util.List;
 @Path("/nearest-objects")
 @Produces({ MediaType.APPLICATION_JSON })
 public class NearestObjectsRestService {
+    private static final String DEFAULT_PROVIDER = "Wiki";
     private static final String DEFAULT_RADIUS = "3000";
-
     @EJB
     NearestObjectsReceiverEJB mNearestObjectsReceiverEJB;
 
@@ -34,7 +31,12 @@ public class NearestObjectsRestService {
     @GET
     public Response getNearestObjects(
             @QueryParam("latitude") String latitude,
-            @QueryParam("longitude") String longitude) {
+            @QueryParam("longitude") String longitude,
+            @QueryParam("radius") String radius,
+            @HeaderParam("Provider-Name") String providerName
+    ) {
+        String provider = DEFAULT_PROVIDER;
+
         Coords aCoords = new Coords();
 
         aCoords.setLatitude(Double.valueOf(latitude));
@@ -43,9 +45,14 @@ public class NearestObjectsRestService {
         NearestObjectsReceiverParametersImpl params = new NearestObjectsReceiverParametersImpl();
         params.setProperty("latitude", latitude);
         params.setProperty("longitude", longitude);
-        params.setProperty("radius", DEFAULT_RADIUS);
 
-        String provider = "Wiki";
+        if(radius != null)
+            params.setProperty("radius", radius);
+        else
+            params.setProperty("radius", DEFAULT_RADIUS);
+
+        if(providerName != null)
+            provider = providerName;
 
         ArrayList<MapObjectImpl> surroundingMapObjects = mNearestObjectsReceiverEJB.getNearestObjects(params, provider);
 

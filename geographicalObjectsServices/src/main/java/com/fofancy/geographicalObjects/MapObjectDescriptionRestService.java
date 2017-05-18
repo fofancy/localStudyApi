@@ -5,10 +5,7 @@ import com.fofancy.geographicalObjects.info.IGeographicalObjectInfo;
 import com.fofancy.geographicalObjects.processor.GeographicalObjectsInfoEJB;
 
 import javax.ejb.EJB;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -18,6 +15,7 @@ import javax.ws.rs.core.Response;
 @Path("/map-object-info")
 @Produces({ MediaType.APPLICATION_JSON })
 public class MapObjectDescriptionRestService {
+    private static final String DEFAULT_PROVIDER = "Wiki";
     @EJB
     GeographicalObjectsInfoEJB geographicalObjectsInfo;
 
@@ -31,14 +29,22 @@ public class MapObjectDescriptionRestService {
     }
 
     @GET
-    public Response getGeographicalObjectInfo(@QueryParam("name") String name) {
+    public Response getGeographicalObjectInfo(
+            @QueryParam("name") String name,
+            @HeaderParam("Provider-Name") String providerName
+    ) {
+        String provider = DEFAULT_PROVIDER;
+
         GeographicalObjectsInfoParameters params = new GeographicalObjectsInfoParameters();
         params.setProperty("name", name);
+
+        if(providerName != null)
+            provider = providerName;
 
         IGeographicalObjectInfo providerResponse = geographicalObjectsInfo
                 .getGeographicalObjectInfo(
                         params,
-                        "Wiki"
+                        provider
                 );
 
         return  Response
