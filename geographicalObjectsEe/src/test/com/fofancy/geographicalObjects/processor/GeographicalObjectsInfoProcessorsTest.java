@@ -2,6 +2,7 @@ package com.fofancy.geographicalObjects.processor;
 
 import com.fofancy.geographicalObjects.info.GeographicalObjectsInfoParameters;
 import com.fofancy.geographicalObjects.info.IGeographicalObjectInfo;
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
@@ -19,8 +20,8 @@ public class GeographicalObjectsInfoProcessorsTest {
         GeographicalObjectsInfoParameters params = new GeographicalObjectsInfoParameters();
         params.setProperty("name", "Louvre");
 
-        IGeographicalObjectInfo response = ejb.getGeographicalObjectInfo(params, "com.fofancy.geographicalObjects.info.wiki.WikiGeographicalObjectsInfoReceiver");
+        IGeographicalObjectInfo response = ejb.getGeographicalObjectInfo(params, "Wiki");
 
-        assertNotNull(response);
+        Assert.assertNotNull(response);
     }
 }

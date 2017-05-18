@@ -1,4 +1,4 @@
-package com.fofancy.geographicalObjects.info;
+package com.fofancy.geographicalObjects.processor;
 
 import javax.inject.Qualifier;
 import java.lang.annotation.Retention;

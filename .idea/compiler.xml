@@ -20,17 +20,25 @@
         <outputRelativeToContentRoot value="true" />
         <module name="apiConfiguration" />
         <module name="geographicalObjects" />
+        <module name="geographicalObjectsEe" />
         <module name="geographicalObjectsServices" />
         <module name="mapInfoReceiver" />
+        <module name="mapInfoReceiverEe" />
+        <module name="mapInfoReceiverEjb" />
         <module name="mapInfoReceiverServices" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="apiConfiguration" target="1.7" />
       <module name="geographicalObjects" target="1.7" />
+      <module name="geographicalObjectsBeans" target="1.8" />
+      <module name="geographicalObjectsEe" target="1.7" />
       <module name="geographicalObjectsServices" target="1.7" />
       <module name="localStudyApi" target="1.5" />
       <module name="mapInfoReceiver" target="1.7" />
+      <module name="mapInfoReceiverBeans" target="1.7" />
+      <module name="mapInfoReceiverEe" target="1.7" />
+      <module name="mapInfoReceiverEjb" target="1.5" />
       <module name="mapInfoReceiverServices" target="1.7" />
     </bytecodeTargetLevel>
   </component>

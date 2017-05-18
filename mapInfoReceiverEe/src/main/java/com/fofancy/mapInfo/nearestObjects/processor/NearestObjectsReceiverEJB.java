@@ -5,15 +5,18 @@
  */
 package com.fofancy.mapInfo.nearestObjects.processor;
 
-import com.fofancy.mapInfo.nearestObjects.*;
-//import com.fofancy.mapInfo.nearestObjects.wiki.WikiNearestObjectsReceiverPropertiesImpl;
+import com.fofancy.mapInfo.nearestObjects.INearestObjectsReceiver;
+import com.fofancy.mapInfo.nearestObjects.MapObjectImpl;
+import com.fofancy.mapInfo.nearestObjects.NearestObjectsReceiverParametersImpl;
 
-import java.util.ArrayList;
-import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.interceptor.Interceptors;
+import java.util.ArrayList;
+import java.util.logging.Logger;
+
+//import com.fofancy.mapInfo.nearestObjects.wiki.WikiNearestObjectsReceiverPropertiesImpl;
 
 //import com.fofancy.overpassApi.OverpassQuery;
 

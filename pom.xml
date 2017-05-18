@@ -12,5 +12,7 @@
     <module>mapInfoReceiver</module>
     <module>mapInfoReceiverServices</module>
     <module>apiConfiguration</module>
+    <module>geographicalObjectsEe</module>
+    <module>mapInfoReceiverEe</module>
   </modules>
 </project>

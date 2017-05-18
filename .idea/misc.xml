@@ -3,7 +3,10 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="ejb" url="file://$PROJECT_DIR$/apiConfiguration" />
     <file type="ejb" url="file://$PROJECT_DIR$/geographicalObjects" />
+    <file type="ejb" url="file://$PROJECT_DIR$/geographicalObjectsEe" />
     <file type="ejb" url="file://$PROJECT_DIR$/mapInfoReceiver" />
+    <file type="ejb" url="file://$PROJECT_DIR$/mapInfoReceiverBeans" />
+    <file type="ejb" url="file://$PROJECT_DIR$/mapInfoReceiverEe" />
     <file type="web" url="file://$PROJECT_DIR$/geographicalObjectsServices" />
     <file type="web" url="file://$PROJECT_DIR$/mapInfoReceiverServices" />
   </component>
@@ -12,6 +15,13 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/geographicalObjectsBeans/pom.xml" />
+        <option value="$PROJECT_DIR$/mapInfoReceiverBeans/pom.xml" />
+        <option value="$PROJECT_DIR$/mapInfoReceiverEjb/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">

@@ -1,16 +1,11 @@
-package com.fofancy.mapInfo.nearestObjects;
+package com.fofancy.mapInfo.nearestObjects.processor;
 
 import com.fofancy.apiconfiguration.providers.Provider;
 import com.fofancy.apiconfiguration.providers.ProvidersContext;
 import com.fofancy.apiconfiguration.providers.ServiceImplementationInfo;
+import com.fofancy.mapInfo.nearestObjects.INearestObjectsReceiver;
 
-import javax.ejb.EJB;
-import javax.inject.Inject;
 import javax.xml.ws.Service;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Created by shaylin3 on 09.04.2017.

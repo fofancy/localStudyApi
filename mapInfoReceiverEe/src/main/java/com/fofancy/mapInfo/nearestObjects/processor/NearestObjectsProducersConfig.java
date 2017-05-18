@@ -1,4 +1,4 @@
-package com.fofancy.mapInfo.nearestObjects;
+package com.fofancy.mapInfo.nearestObjects.processor;
 
 import com.fofancy.apiconfiguration.providers.ProvidersContext;
 

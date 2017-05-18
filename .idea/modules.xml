@@ -4,9 +4,11 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/apiConfiguration/apiConfiguration.iml" filepath="$PROJECT_DIR$/apiConfiguration/apiConfiguration.iml" />
       <module fileurl="file://$PROJECT_DIR$/geographicalObjects/geographicalObjects.iml" filepath="$PROJECT_DIR$/geographicalObjects/geographicalObjects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/geographicalObjectsEe/geographicalObjectsEe.iml" filepath="$PROJECT_DIR$/geographicalObjectsEe/geographicalObjectsEe.iml" />
       <module fileurl="file://$PROJECT_DIR$/geographicalObjectsServices/geographicalObjectsServices.iml" filepath="$PROJECT_DIR$/geographicalObjectsServices/geographicalObjectsServices.iml" />
       <module fileurl="file://$PROJECT_DIR$/localStudyApi.iml" filepath="$PROJECT_DIR$/localStudyApi.iml" />
       <module fileurl="file://$PROJECT_DIR$/mapInfoReceiver/mapInfoReceiver.iml" filepath="$PROJECT_DIR$/mapInfoReceiver/mapInfoReceiver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mapInfoReceiverEe/mapInfoReceiverEe.iml" filepath="$PROJECT_DIR$/mapInfoReceiverEe/mapInfoReceiverEe.iml" />
       <module fileurl="file://$PROJECT_DIR$/mapInfoReceiverServices/mapInfoReceiverServices.iml" filepath="$PROJECT_DIR$/mapInfoReceiverServices/mapInfoReceiverServices.iml" />
     </modules>
   </component>

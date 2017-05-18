@@ -21,11 +21,6 @@
     
     <dependencies>
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>geographicalObjects</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>
@@ -38,12 +33,17 @@
         </dependency>
         <dependency>
             <groupId>com.fofancy</groupId>
+            <artifactId>api-configuration</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fofancy</groupId>
             <artifactId>geographicalObjects</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.fofancy</groupId>
-            <artifactId>api-configuration</artifactId>
+            <artifactId>geographical-objects-ee</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

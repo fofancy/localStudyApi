@@ -1,4 +1,4 @@
-package com.fofancy.mapInfo.nearestObjects;
+package com.fofancy.mapInfo.nearestObjects.processor;
 
 import javax.inject.Qualifier;
 import java.lang.annotation.Retention;

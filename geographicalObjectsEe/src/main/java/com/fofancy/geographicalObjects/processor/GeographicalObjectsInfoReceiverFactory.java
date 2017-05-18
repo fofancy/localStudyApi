@@ -1,17 +1,10 @@
-package com.fofancy.geographicalObjects.info;
-
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+package com.fofancy.geographicalObjects.processor;
 
 import com.fofancy.apiconfiguration.providers.Provider;
 import com.fofancy.apiconfiguration.providers.ProvidersContext;
 import com.fofancy.apiconfiguration.providers.ServiceImplementationInfo;
+import com.fofancy.geographicalObjects.info.IGeographicalObjectsInfoReceiver;
 
-import javax.ejb.EJB;
-import javax.ejb.Singleton;
-import javax.inject.Inject;
 import javax.xml.ws.Service;
 
 /**

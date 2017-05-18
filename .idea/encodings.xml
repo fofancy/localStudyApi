@@ -2,8 +2,12 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/geographicalObjects" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/geographicalObjectsBeans" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/geographicalObjectsEe" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/geographicalObjectsServices" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mapInfoReceiver" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mapInfoReceiverBeans" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mapInfoReceiverEe" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mapInfoReceiverServices" charset="UTF-8" />
   </component>
 </project>

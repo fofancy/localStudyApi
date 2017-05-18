@@ -1,4 +1,4 @@
-package com.fofancy.geographicalObjects.info;
+package com.fofancy.geographicalObjects.processor;
 
 import com.fofancy.apiconfiguration.providers.ProvidersContext;
 
