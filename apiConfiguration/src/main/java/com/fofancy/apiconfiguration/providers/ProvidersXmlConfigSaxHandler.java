@@ -12,29 +12,30 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Stack;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by shaylin3 on 27.04.2017.
  */
 public class ProvidersXmlConfigSaxHandler extends DefaultHandler {
-    private HashMap<String, Provider> providers = new HashMap<String, Provider>();
+    private ConcurrentHashMap<String, Provider> providers = new ConcurrentHashMap<String, Provider>();
 
     private Stack<String> elementStack = new Stack<String>();
 
     private ServiceHelper serviceHelper = new ServiceHelper();
     private ServiceImplementationInfo currentImplementationInfo = new ServiceImplementationInfo();
-    private HashMap<String, ServiceImplementationInfo> currentServicesImplementations = new HashMap<String, ServiceImplementationInfo>();
+    private ConcurrentHashMap<String, ServiceImplementationInfo> currentServicesImplementations = new ConcurrentHashMap<String, ServiceImplementationInfo>();
     private Provider currentProvider = new Provider();
     private String currentProviderName = new String();
 
     public ProvidersXmlConfigSaxHandler() {
     }
 
-    public HashMap<String, Provider> getProviders() {
+    public ConcurrentHashMap<String, Provider> getProviders() {
         return providers;
     }
 
-    public void setProviders(HashMap<String, Provider> providers) {
+    public void setProviders(ConcurrentHashMap<String, Provider> providers) {
         this.providers = providers;
     }
 
@@ -47,7 +48,7 @@ public class ProvidersXmlConfigSaxHandler extends DefaultHandler {
             serviceHelper = new ServiceHelper();
         }
         else if(qName.equals("services")){
-            currentServicesImplementations = new HashMap<String, ServiceImplementationInfo>();
+            currentServicesImplementations = new ConcurrentHashMap<String, ServiceImplementationInfo>();
         }
         else if(qName.equals("service-implementation-info")){
             currentImplementationInfo = new ServiceImplementationInfo();

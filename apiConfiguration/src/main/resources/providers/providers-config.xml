@@ -8,7 +8,7 @@
             <service-implementation-info>
                 <service-name>geographical-objects-info</service-name>
                 <info>
-                    <wsdl-url>http://localhost:8180/wikiGeographicalObjects-1.0-SNAPSHOT/geographical-objects-info?wsdl</wsdl-url>
+                    <wsdl-url>http://localhost:8180/wiki-geographical-objects/geographical-objects-info?wsdl</wsdl-url>
                     <namespace>http://wiki.fofancy.com/</namespace>
                     <port-name>WikiGeographicalObjectsInfoReceiverServiceEndpointPort</port-name>
                 </info>
@@ -16,7 +16,7 @@
             <service-implementation-info>
                 <service-name>nearest-objects</service-name>
                 <info>
-                    <wsdl-url>http://localhost:8180/wikiMapInfoReceiver-1.0-SNAPSHOT/nearest-objects?wsdl</wsdl-url>
+                    <wsdl-url>http://localhost:8180/wiki-map-info-receiver/nearest-objects?wsdl</wsdl-url>
                     <namespace>http://wiki.fofancy.com/</namespace>
                     <port-name>WikiNearestObjectsReceiverServiceEndpointPort</port-name>
                 </info>

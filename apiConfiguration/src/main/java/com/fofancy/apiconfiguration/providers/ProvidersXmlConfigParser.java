@@ -15,12 +15,13 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by shaylin3 on 30.04.2017.
  */
 public class ProvidersXmlConfigParser {
-    public HashMap<String, Provider> parse(String filePath, String schemaPath) {
+    public ConcurrentHashMap<String, Provider> parse(String filePath, String schemaPath) {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         try {
             factory.setNamespaceAware( true);

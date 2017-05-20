@@ -7,6 +7,7 @@
     <file type="ejb" url="file://$PROJECT_DIR$/mapInfoReceiver" />
     <file type="ejb" url="file://$PROJECT_DIR$/mapInfoReceiverBeans" />
     <file type="ejb" url="file://$PROJECT_DIR$/mapInfoReceiverEe" />
+    <file type="web" url="file://$PROJECT_DIR$/apiConfigurationServices" />
     <file type="web" url="file://$PROJECT_DIR$/geographicalObjectsServices" />
     <file type="web" url="file://$PROJECT_DIR$/mapInfoReceiverServices" />
   </component>

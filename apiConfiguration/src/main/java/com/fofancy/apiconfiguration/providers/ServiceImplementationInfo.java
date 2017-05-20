@@ -6,9 +6,11 @@ import javax.xml.ws.Service;
 /**
  * Created by shaylin3 on 30.04.2017.
  */
+
+//TODO : is here needed to use concurrency??
 public class ServiceImplementationInfo {
-    private Service service;
-    private QName portName;
+    private volatile Service service;
+    private volatile QName portName;
 
     public Service getService() {
         return service;

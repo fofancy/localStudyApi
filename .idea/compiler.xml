@@ -19,6 +19,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="apiConfiguration" />
+        <module name="apiConfigurationServices" />
         <module name="geographicalObjects" />
         <module name="geographicalObjectsEe" />
         <module name="geographicalObjectsServices" />
@@ -30,6 +31,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="apiConfiguration" target="1.7" />
+      <module name="apiConfigurationServices" target="1.7" />
       <module name="geographicalObjects" target="1.7" />
       <module name="geographicalObjectsBeans" target="1.8" />
       <module name="geographicalObjectsEe" target="1.7" />

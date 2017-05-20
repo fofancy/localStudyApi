@@ -17,7 +17,7 @@ import javax.ws.rs.core.Response;
 public class MapObjectDescriptionRestService {
     private static final String DEFAULT_PROVIDER = "Wiki";
     @EJB
-    GeographicalObjectsInfoEJB geographicalObjectsInfo;
+    private GeographicalObjectsInfoEJB geographicalObjectsInfo;
 
 
     public GeographicalObjectsInfoEJB getGeographicalObjectsInfo() {
@@ -51,4 +51,6 @@ public class MapObjectDescriptionRestService {
                 .ok(providerResponse)
                 .build();
     }
+
+
 }

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/apiConfiguration/apiConfiguration.iml" filepath="$PROJECT_DIR$/apiConfiguration/apiConfiguration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apiConfigurationServices/apiConfigurationServices.iml" filepath="$PROJECT_DIR$/apiConfigurationServices/apiConfigurationServices.iml" />
       <module fileurl="file://$PROJECT_DIR$/geographicalObjects/geographicalObjects.iml" filepath="$PROJECT_DIR$/geographicalObjects/geographicalObjects.iml" />
       <module fileurl="file://$PROJECT_DIR$/geographicalObjectsEe/geographicalObjectsEe.iml" filepath="$PROJECT_DIR$/geographicalObjectsEe/geographicalObjectsEe.iml" />
       <module fileurl="file://$PROJECT_DIR$/geographicalObjectsServices/geographicalObjectsServices.iml" filepath="$PROJECT_DIR$/geographicalObjectsServices/geographicalObjectsServices.iml" />

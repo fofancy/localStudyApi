@@ -2,18 +2,20 @@ package com.fofancy.apiconfiguration.providers;
 
 import javax.xml.ws.Service;
 import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by shaylin3 on 25.04.2017.
  */
-public class Provider {
-    private HashMap<String, ServiceImplementationInfo> servicesImplementations;
 
-    public HashMap<String, ServiceImplementationInfo> getServicesImplementations() {
+public class Provider {
+    private ConcurrentHashMap<String, ServiceImplementationInfo> servicesImplementations;
+
+    public ConcurrentHashMap<String, ServiceImplementationInfo> getServicesImplementations() {
         return servicesImplementations;
     }
 
-    public void setServicesImplementations(HashMap<String, ServiceImplementationInfo> servicesImplementations) {
+    public void setServicesImplementations(ConcurrentHashMap<String, ServiceImplementationInfo> servicesImplementations) {
         this.servicesImplementations = servicesImplementations;
     }
 

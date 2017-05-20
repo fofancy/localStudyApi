@@ -14,5 +14,6 @@
     <module>apiConfiguration</module>
     <module>geographicalObjectsEe</module>
     <module>mapInfoReceiverEe</module>
+      <module>apiConfigurationServices</module>
   </modules>
 </project>
